@@ -54,7 +54,7 @@ static Color colors[] = {
 /* curses attributes for not selected tags which with urgent windows */
 #define TAG_URGENT (COLOR(BLUE) | A_NORMAL | A_BLINK)
 
-const char tags[][8] = { "1", "2", "3", "4", "5" };
+const char tags[][8] = { "一", "", "三", "四", "五", "六", "七", "八" };
 
 #include "tile.c"
 #include "grid.c"
@@ -69,7 +69,7 @@ static Layout layouts[] = {
 	{ "[ ]", fullscreen },
 };
 
-#define MOD  CTRL('g')
+#define MOD  CTRL('a')
 #define TAGKEYS(KEY,TAG) \
 	{ { MOD, 'v', KEY,     }, { view,           { tags[TAG] }               } }, \
 	{ { MOD, 't', KEY,     }, { tag,            { tags[TAG] }               } }, \
@@ -140,6 +140,9 @@ static KeyBinding bindings[] = {
 	TAGKEYS( '3',                              2)
 	TAGKEYS( '4',                              3)
 	TAGKEYS( '5',                              4)
+	TAGKEYS( '6',                              5)
+	TAGKEYS( '7',                              6)
+	TAGKEYS( '8',                              7)
 };
 
 static const ColorRule colorrules[] = {
@@ -187,6 +190,8 @@ static Button buttons[] = {
 	{ BUTTON1_DOUBLE_CLICKED, { mouse_fullscreen, { "[ ]" } } },
 	{ BUTTON2_CLICKED,        { mouse_zoom,       { NULL  } } },
 	{ BUTTON3_CLICKED,        { mouse_minimize,   { NULL  } } },
+    { BUTTON4_PRESSED,        { scrollback,       { "-1"  } } },
+    { BUTTON4_RELEASED,       { scrollback,       { "1"   } } },
 };
 #endif /* CONFIG_MOUSE */
 

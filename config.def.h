@@ -31,12 +31,12 @@ static Color colors[] = {
 /* curses attributes for the status bar */
 #define BAR_ATTR        (COLOR(BLUE) | A_NORMAL)
 /* characters for beginning and end of status bar message */
-#define BAR_BEGIN       '['
-#define BAR_END         ']'
+#define BAR_BEGIN       '\0'
+#define BAR_END         '\0'
 /* status bar (command line option -s) position */
 #define BAR_POS         BAR_TOP /* BAR_BOTTOM, BAR_OFF */
 /* whether status bar should be hidden if only one client exists */
-#define BAR_AUTOHIDE    true
+#define BAR_AUTOHIDE    false
 /* master width factor [0.1 .. 0.9] */
 #define MFACT 0.5
 /* number of clients in master area */

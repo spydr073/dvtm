@@ -31,8 +31,8 @@ static Color colors[] = {
 /* curses attributes for the status bar */
 #define BAR_ATTR        (COLOR(BLUE) | A_NORMAL)
 /* characters for beginning and end of status bar message */
-#define BAR_BEGIN       '\0'
-#define BAR_END         '\0'
+#define BAR_BEGIN       ' '
+#define BAR_END         ' '
 /* status bar (command line option -s) position */
 #define BAR_POS         BAR_TOP /* BAR_BOTTOM, BAR_OFF */
 /* whether status bar should be hidden if only one client exists */
@@ -44,7 +44,7 @@ static Color colors[] = {
 /* scroll back buffer size in lines */
 #define SCROLL_HISTORY 1024
 /* printf format string for the tag in the status bar */
-#define TAG_SYMBOL   "[%s]"
+#define TAG_SYMBOL   " %s "
 /* curses attributes for the currently selected tags */
 #define TAG_SEL      (COLOR(BLUE) | A_BOLD)
 /* curses attributes for not selected tags which contain no windows */

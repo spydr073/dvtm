@@ -63,10 +63,10 @@ const char tags[][8] = { "一", "二", "三", "四", "五", "六", "七", "八" 
 
 /* by default the first layout entry is used */
 static Layout layouts[] = {
-	{ "[T]=", tile },
-	{ "[G]", grid },
-	{ "[S]", bstack },
-	{ "[F]", fullscreen },
+	{ "  [T]", tile },
+	{ "  [G]", grid },
+	{ "  [S]", bstack },
+	{ "  [F]", fullscreen },
 };
 
 #define MOD  CTRL('a')
@@ -87,10 +87,10 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'H',          }, { focusleft,      { NULL }                    } },
 	{ { MOD, 'L',          }, { focusright,     { NULL }                    } },
 	{ { MOD, 'k',          }, { focusprev,      { NULL }                    } },
-	{ { MOD, 'f',          }, { setlayout,      { "[T]" }                   } },
-	{ { MOD, 'g',          }, { setlayout,      { "[G]" }                   } },
-	{ { MOD, 'b',          }, { setlayout,      { "[S]" }                   } },
-	{ { MOD, 'm',          }, { setlayout,      { "[F]" }                   } },
+	{ { MOD, 'f',          }, { setlayout,      { "  [T]" }                 } },
+	{ { MOD, 'g',          }, { setlayout,      { "  [G]" }                 } },
+	{ { MOD, 'b',          }, { setlayout,      { "  [S]" }                 } },
+	{ { MOD, 'm',          }, { setlayout,      { "  [F]" }                 } },
 	{ { MOD, ' ',          }, { setlayout,      { NULL }                    } },
 	{ { MOD, 'i',          }, { incnmaster,     { "+1" }                    } },
 	{ { MOD, 'd',          }, { incnmaster,     { "-1" }                    } },
@@ -187,11 +187,11 @@ static const ColorRule colorrules[] = {
 #ifdef CONFIG_MOUSE
 static Button buttons[] = {
 	{ BUTTON1_CLICKED,        { mouse_focus,      { NULL  } } },
-	{ BUTTON1_DOUBLE_CLICKED, { mouse_fullscreen, { "[ ]" } } },
+	{ BUTTON1_DOUBLE_CLICKED, { mouse_fullscreen, { "  [F]" } } },
 	{ BUTTON2_CLICKED,        { mouse_zoom,       { NULL  } } },
 	{ BUTTON3_CLICKED,        { mouse_minimize,   { NULL  } } },
-    { BUTTON4_RELEASED,       { scrollback,       { "1"   } } },
-    { BUTTON5_RELEASED,       { scrollback,       { "-1"  } } },
+    { BUTTON4_PRESSED,        { scrollback,       { "1"   } } },
+    { BUTTON5_PRESSED,        { scrollback,       { "-1"  } } },
 };
 #endif /* CONFIG_MOUSE */
 

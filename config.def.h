@@ -120,12 +120,12 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'E',          }, { copymode,       { "dvtm-pager" }            } },
 	{ { MOD, '/',          }, { copymode,       { "dvtm-pager", "/" }       } },
 	{ { MOD, 'p',          }, { paste,          { NULL }                    } },
-	{ { MOD, KEY_PPAGE,    }, { scrollback,     { "-1" }                    } },
-	{ { MOD, KEY_NPAGE,    }, { scrollback,     { "1"  }                    } },
+	{ { MOD, KEY_PPAGE,    }, { scrollback,     { "-2" }                    } },
+	{ { MOD, KEY_NPAGE,    }, { scrollback,     { "2"  }                    } },
 	{ { MOD, '?',          }, { create,         { "man dvtm", "dvtm help" } } },
 	{ { MOD, MOD,          }, { send,           { (const char []){MOD, 0} } } },
-	{ { KEY_SPREVIOUS,     }, { scrollback,     { "-1" }                    } },
-	{ { KEY_SNEXT,         }, { scrollback,     { "1"  }                    } },
+	{ { KEY_SPREVIOUS,     }, { scrollback,     { "-2" }                    } },
+	{ { KEY_SNEXT,         }, { scrollback,     { "2"  }                    } },
 	{ { MOD, '0',          }, { view,           { NULL }                    } },
 	{ { MOD, KEY_F(1),     }, { view,           { tags[0] }                 } },
 	{ { MOD, KEY_F(2),     }, { view,           { tags[1] }                 } },
@@ -186,12 +186,12 @@ static const ColorRule colorrules[] = {
 
 #ifdef CONFIG_MOUSE
 static Button buttons[] = {
-	{ BUTTON1_CLICKED,        { mouse_focus,      { NULL  } } },
+	{ BUTTON1_CLICKED,        { mouse_focus,      { NULL    } } },
 	{ BUTTON1_DOUBLE_CLICKED, { mouse_fullscreen, { "  [F]" } } },
-	{ BUTTON2_CLICKED,        { mouse_zoom,       { NULL  } } },
-	{ BUTTON3_CLICKED,        { mouse_minimize,   { NULL  } } },
-    { BUTTON4_PRESSED,        { scrollback,       { "1"   } } },
-    { BUTTON5_PRESSED,        { scrollback,       { "-1"  } } },
+	{ BUTTON2_CLICKED,        { mouse_zoom,       { NULL    } } },
+	{ BUTTON3_CLICKED,        { mouse_minimize,   { NULL    } } },
+    { BUTTON4_PRESSED,        { scrollback,       { "-4"    } } },
+    { BUTTON5_PRESSED,        { scrollback,       { "4"     } } },
 };
 #endif /* CONFIG_MOUSE */
 

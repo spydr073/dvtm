@@ -178,6 +178,8 @@ static const ColorRule colorrules[] = {
  * REPORT_MOUSE_POSITION    report mouse movement
  */
 
+#define NCURSES_MOUSE_VERSION // bad test.. added this...
+
 #ifdef NCURSES_MOUSE_VERSION
 # define CONFIG_MOUSE /* compile in mouse support if we build against ncurses */
 #endif
